@@ -1,9 +1,9 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 import "./globals.css";
@@ -15,8 +15,6 @@ const inter = Inter({
   adjustFontFallback: true,
   variable: "--font-inter",
 });
-
-const appName = process.env.NEXT_PUBLIC_APP_NAME || "ACME Corporation";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -32,14 +30,12 @@ export const metadata: Metadata = {
   description: "Premium developer apparel, accessories, and gear.",
   openGraph: {
     type: "website",
-    siteName: appName,
+    siteName: "Vercel Swag Store",
   },
   twitter: {
     card: "summary_large_image",
   },
 };
-
-const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function RootLayout({
   children,
@@ -55,13 +51,14 @@ export default function RootLayout({
           <SiteHeader />
         </Suspense>
         {children}
-        <footer className="border-t border-zinc-200 px-5 py-8 text-center text-sm text-zinc-600">
-          © 2026 Vercel Swag Store
-        </footer>
+        <Suspense
+          fallback={<footer className="h-24 border-t border-zinc-200" />}
+        >
+          <SiteFooter />
+        </Suspense>
         <Analytics />
         <SpeedInsights />
       </body>
-      {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }

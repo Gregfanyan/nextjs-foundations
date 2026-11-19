@@ -1,7 +1,5 @@
 import type { NextConfig } from 'next';
 
-const blogUrl = process.env.BLOG_URL || 'http://localhost:3001';
-
 const nextConfig: NextConfig = {
   images: {
     // line up with the Tailwind breakpoints
@@ -29,22 +27,6 @@ const nextConfig: NextConfig = {
       revalidate: 900, // 15 min before background revalidation
       expire: 3600, // 1 hour max
     },
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/blog',
-        destination: `${blogUrl}/blog`,
-      },
-      {
-        source: '/blog/:path*',
-        destination: `${blogUrl}/blog/:path*`,
-      },
-      {
-        source: '/blog-static/:path+',
-        destination: `${blogUrl}/blog-static/:path+`,
-      },
-    ];
   },
 };
 
