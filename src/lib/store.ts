@@ -53,14 +53,10 @@ export function getProducts(
   return cachedProducts(query.toString());
 }
 
-async function cachedProduct(id: string) {
+export async function getProduct(id: string) {
   "use cache";
   cacheLife("products");
   return request<Product>(`/products/${id}`);
-}
-
-export function getProduct(id: string) {
-  return cachedProduct(id);
 }
 
 export function getStock(id: string) {
