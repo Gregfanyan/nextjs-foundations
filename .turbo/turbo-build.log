@@ -1,0 +1,68 @@
+../..                                    |  WARN  Unsupported engine: wanted: {"node":"24.x"} (current: {"node":"v22.23.2","pnpm":"10.34.5"})
+
+> @repo/web@0.1.0 build /Users/grigor.fanyan/projects/nextjs-foundations/apps/web
+> next build
+
+▲ Next.js 16.4.5 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 18ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 442ms
+  Running TypeScript ...
+  Finished TypeScript in 1424ms ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/33) ...
+  Generating static pages using 9 workers (8/33) 
+  Generating static pages using 9 workers (16/33) 
+  Generating static pages using 9 workers (24/33) 
+✓ Generating static pages using 9 workers (33/33) in 566ms
+  Finalizing page optimization ...
+
+Route (app)                Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ◐ /about
+├ ƒ /api/analytics
+├ ƒ /api/analytics/vitals
+├ ƒ /api/debug
+├ ƒ /api/ping
+├ ƒ /api/transactions
+├ ○ /contact
+├ ◐ /dashboard
+├ ○ /dashboard/analytics
+├ ○ /dashboard/settings
+├ ◐ /data-demo
+├ ◐ /demo/cards
+├ ○ /demo/counter
+├ ◐ /demo/dialog
+├   /docs/[...slug]
+│ └ ◐ /docs/[...slug]
+├ ○ /env-demo
+├ ◐ /error-demo
+├ ○ /gallery
+├ ◐ /nav-demo
+├ ○ /nav-demo/page-a
+├ ○ /nav-demo/page-b
+├ ○ /old-about
+├   /posts/[slug]
+│ └ ◐ /posts/[slug]
+├ ◐ /pricing
+├ ○ /products                     15m      1h
+├   /products/[id]
+│ └ ◐ /products/[id]
+├   /profile/[id]
+│ └ ◐ /profile/[id]
+├ ○ /security-demo
+└   /shop/[[...slug]]
+  └ ◐ /shop/[[...slug]]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)             prerendered as static content
+◐  (Partial Prerender)  prerendered as static HTML with dynamic server-streamed content
+ƒ  (Dynamic)            server-rendered on demand
+

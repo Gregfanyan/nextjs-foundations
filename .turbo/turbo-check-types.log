@@ -1,0 +1,7 @@
+../..                                    |  WARN  Unsupported engine: wanted: {"node":"24.x"} (current: {"node":"v22.23.2","pnpm":"10.34.5"})
+
+> @repo/web@0.1.0 check-types /Users/grigor.fanyan/projects/nextjs-foundations/apps/web
+> next typegen && tsc --noEmit
+
+Generating route types...
+✓ Types generated successfully

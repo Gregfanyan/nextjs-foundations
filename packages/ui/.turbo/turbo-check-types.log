@@ -1,0 +1,5 @@
+../..                                    |  WARN  Unsupported engine: wanted: {"node":"24.x"} (current: {"node":"v22.23.2","pnpm":"10.34.5"})
+
+> @repo/ui@0.0.0 check-types /Users/grigor.fanyan/projects/nextjs-foundations/packages/ui
+> tsc --noEmit
+
